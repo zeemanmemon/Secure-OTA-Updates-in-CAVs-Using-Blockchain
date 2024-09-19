@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Transfer</title>
+</head>
+<body>
+
+    <!-- 
+        Purpose: This file contains the structure and layout of the web application.
+It provides a form for creating assets and another for querying assets.
+Key Sections:
+
+        Create Asset Form: Inputs for assetID, color, size, owner, and appraisedValue.
+        Query Asset Form: Input for queryAssetID.
+        Response Section: Displays the response from the server.
+        
+    -->
+    <h1>Asset Transfer</h1>
+
+    <h2>Create Asset</h2>
+    <form id="createAssetForm">
+        <label for="assetID">Asset ID:</label>
+        <input type="text" id="assetID" name="assetID" required>
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
+        <label for="size">Size:</label>
+        <input type="number" id="size" name="size" required>
+        <label for="owner">Owner:</label>
+        <input type="text" id="owner" name="owner" required>
+        <label for="appraisedValue">Appraised Value:</label>
+        <input type="number" id="appraisedValue" name="appraisedValue" required>
+        <button type="submit">Create Asset</button>
+    </form>
+
+    <h2>Query Asset</h2>
+    <form id="queryAssetForm">
+        <label for="queryAssetID">Asset ID:</label>
+        <input type="text" id="queryAssetID" name="queryAssetID" required>
+        <button type="submit">Query Asset</button>
+    </form>
+
+    <pre id="response"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
