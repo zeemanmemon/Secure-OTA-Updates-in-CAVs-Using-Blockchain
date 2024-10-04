@@ -1,3 +1,4 @@
+Link to dissertation published (everything is mentioned in detail here, including the hardware configuration and simulation parameters): https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789 
 
 For my setup, I used Oracle VM VirtualBox with Ubuntu 22.04 OS.
 
