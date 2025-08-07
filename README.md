@@ -27,7 +27,7 @@ mkdir research-setup curl -sSLO https://raw.githubusercontent.com/hyperledger/fa
 
 4.  After installation, the fabric-samples directory will include ready-to-run examples.
     
-5.  Use the **Asset Transfer (Basic)** sample to simulate OTA metadata creation and querying.Modify smartcontract.go and assetTransfer.go for your custom OTA logic:[https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic)
+5.  Use the **Asset Transfer (Basic)** sample to simulate OTA metadata creation and querying. Modify smartcontract.go and assetTransfer.go for your custom OTA logic:[https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic)
     
 6.  Run the REST API server:[https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-go](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-go)
     
