@@ -1,34 +1,72 @@
-Link to dissertation published (everything is mentioned in detail here, including the hardware configuration and simulation parameters): https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789 
+This repository accompanies my MSc research project on enhancing the security of Over-the-Air (OTA) software updates in Connected and Autonomous Vehicles (CAVs) using a hybrid framework combining the VEINS simulation tool and Hyperledger Fabric blockchain.
 
-For my setup, I used Oracle VM VirtualBox with Ubuntu 22.04 OS.
+Link to dissertation (includes detailed methodology, hardware configuration, and simulation parameters):[**ProQuest Dissertation Access (University of Windsor)**](https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789)
 
-**Blockchain Network:** 
-1. Visit https://hyperledger-fabric.readthedocs.io/en/release-2.5/getting_started.html (read through this for an intro)
-2. Download the prereqs to run Hyperledger Fabric from here: https://hyperledger-fabric.readthedocs.io/en/release-2.5/prereqs.html (including Go and JQ, even though they are mentioned as Optional - you will need it later).
-3. Install Hyperledger Fabric: https://hyperledger-fabric.readthedocs.io/en/release-2.5/install.html. The cmds in a nutshell are:
-```
-mkdir research-setup
-curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh && chmod +x install-fabric.sh
-./install-fabric.sh docker samples binary
-```
-5. You should now have the Hyperledger Fabric latest version installed, along with the sample files.
-6. For our setup, we used the basic asset transfer sample as we need to simulate creation/storage of the OTA metadata, and querying/reading of the metadata.
-7. How to run the sample is mentioned here: https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic (to implement our functionality, we modified the smartcontract.go and assetTransfer.go).
-8. How to run the REST server is mentioned here: https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-go
-9. We use Postman to interact with the Blockchain REST server. Run the code below on your terminal to install Postman:
-```
-sudo snap install postman
+Setup Details
+-------------
+
+**Host Environment:**
+
+*   Oracle VM VirtualBox
+    
+*   Ubuntu 22.04 OS
+    
+
+Blockchain Network Setup (Hyperledger Fabric)
+---------------------------------------------
+
+1.  Overview:Visit the official getting started guide:[https://hyperledger-fabric.readthedocs.io/en/release-2.5/getting\_started.html](https://hyperledger-fabric.readthedocs.io/en/release-2.5/getting_started.html)
+    
+2.  Install prerequisites (Go, Docker, jq, etc.):[https://hyperledger-fabric.readthedocs.io/en/release-2.5/prereqs.html](https://hyperledger-fabric.readthedocs.io/en/release-2.5/prereqs.html)
+    
+3.  Install Hyperledger Fabric:
+
+```bash
+mkdir research-setup curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh chmod +x install-fabric.sh ./install-fabric.sh docker samples binary</pre>
 ```
 
-**VEINS Framework:** 
-1. Setup VEINS, and run the Veins demo scenario using the instructions here: https://veins.car2x.org/tutorial/
-2. We modified the TraCIDemo11p.cc, TraCIDemo11p.h file, OMNETConfiguration.ini, and the makefrag file to fit our simulation scenario. Logic is mentioned within the files, basically, I implemented a function for each feature, i.e., downloading, querying, and logging the results obtained.
-3. Make sure to run the code below in your terminal before starting the simulation:
+4.  After installation, the fabric-samples directory will include ready-to-run examples.
+    
+5.  Use the **Asset Transfer (Basic)** sample to simulate OTA metadata creation and querying.Modify smartcontract.go and assetTransfer.go for your custom OTA logic:[https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic)
+    
+6.  Run the REST API server:[https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-go](https://github.com/hyperledger/fabric-samples/tree/main/asset-transfer-basic/rest-api-go)
+    
+7.  Use Postman to test the blockchain REST APIs:
+```bash
+sudo snap install postman </pre>
 ```
+
+VEINS Framework Setup
+
+1.  Follow the VEINS tutorial:[https://veins.car2x.org/tutorial/](https://veins.car2x.org/tutorial/)
+    
+2.  Modify the following files to match the OTA simulation logic:
+    
+    *   TraCIDemo11p.cc
+        
+    *   TraCIDemo11p.h
+        
+    *   OMNETConfiguration.ini
+        
+    *   makefrag
+        
+3.  Use the following commands before simulation to install dependencies and generate OTA package binaries:
+```bash
 cd /veins/src/veins/modules/application/traci
 wget https://github.com/nlohmann/json/releases/download/v3.10.5/json.hpp
 sudo apt-get update
 sudo apt-get install libssl-dev
-dd if=/dev/urandom of=~/veins/examples/veins/OTAUpdatePackage.bin bs=1M count=40 && dd if=/dev/urandom of=~/veins/examples/veins/tamperedUpdate.bin bs=1M count=42 (this is for creating the OTA update packages, tampered and non-tampered).
 
+# Generate OTA update binaries
+dd if=/dev/urandom of=~/veins/examples/veins/OTAUpdatePackage.bin bs=1M count=40
+dd if=/dev/urandom of=~/veins/examples/veins/tamperedUpdate.bin bs=1M count=42
+```
 
+Notes
+-----
+
+*   This repo includes scripts and documentation related to my MSc thesis project.
+    
+*   Data was collected from simulations over WiFi, 4G, and 5G to evaluate download latency, query response times, and integrity verification using hash comparison.
+    
+*   For complete methodology and results, refer to the linked dissertation.
