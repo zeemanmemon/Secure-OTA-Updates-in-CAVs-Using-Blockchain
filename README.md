@@ -1,6 +1,6 @@
 This repository contains the implementation for my MSc research project which introduces a novel approach on securing Over-the-Air (OTA) software updates in Connected and Autonomous Vehicles (CAVs). The project integrates the VEINS simulation framework with Hyperledger Fabric to demonstrate a blockchain-backed architecture for secure OTA delivery, integrity verification, and tamper detection.
 
-Link to dissertation (includes detailed methodology, hardware configuration, and simulation parameters): [**ProQuest Dissertation Access (University of Windsor)**](https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789)
+Link to dissertation (includes detailed methodology, hardware configuration, and simulation parameters): [**ProQuest Dissertation Access (University of Windsor)**]([https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789](https://www.proquest.com/openview/e691ff4a0a3684db9b879ab1beb92b53/1?pq-origsite=gscholar&cbl=18750&diss=y))
 
 Setup Details
 -------------
