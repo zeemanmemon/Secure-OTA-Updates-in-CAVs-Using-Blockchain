@@ -1,4 +1,4 @@
-This repository accompanies my MSc research project on enhancing the security of Over-the-Air (OTA) software updates in Connected and Autonomous Vehicles (CAVs) using a hybrid framework combining the VEINS simulation tool and Hyperledger Fabric blockchain.
+This repository contains the implementation for my MSc research project which introduces a novel approach on securing Over-the-Air (OTA) software updates in Connected and Autonomous Vehicles (CAVs). The project integrates the VEINS simulation framework with Hyperledger Fabric to demonstrate a blockchain-backed architecture for secure OTA delivery, integrity verification, and tamper detection.
 
 Link to dissertation (includes detailed methodology, hardware configuration, and simulation parameters):[**ProQuest Dissertation Access (University of Windsor)**](https://ledproxy2.uwindsor.ca/login?url=https://www.proquest.com/dissertations-theses/enhancing-security-over-air-updates-connected/docview/3106813877/se-2?accountid=14789)
 
@@ -22,7 +22,7 @@ Blockchain Network Setup (Hyperledger Fabric)
 3.  Install Hyperledger Fabric:
 
 ```bash
-mkdir research-setup curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh chmod +x install-fabric.sh ./install-fabric.sh docker samples binary</pre>
+mkdir research-setup curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh chmod +x install-fabric.sh ./install-fabric.sh docker samples binary
 ```
 
 4.  After installation, the fabric-samples directory will include ready-to-run examples.
